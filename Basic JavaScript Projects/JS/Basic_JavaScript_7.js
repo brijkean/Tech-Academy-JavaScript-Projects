@@ -30,8 +30,6 @@ function can_Vote() {
     document.getElementById("old_enough").innerHTML = reply;
 }
 //pg136
-
- 
 function bday_Today() {
     var today = new Date();
     var td = today.getUTCDate();
