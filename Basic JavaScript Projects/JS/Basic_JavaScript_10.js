@@ -56,6 +56,6 @@ let car = {
         return this.color + " " + this.year + " " + this.make + " " + this.model;
     }
 };
-document.getElementById("let_keyword").innerHTML = car.description();
+document.getElementById("let_keyword").innerHTML = "Fred drives a " + car.description() + ".";
 
 
