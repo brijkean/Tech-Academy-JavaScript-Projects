@@ -1,9 +1,9 @@
-//
-//
+// this function will fire once the DOM is loaded
+// Disable the stop button since it isn't needed until game start
 window.onload = function() {watch()};
 function watch() {
     var btn = document.getElementById("btnStop");
-    btnDisabled(btn); //disable stop button snce game hasn't started yet
+    btnDisabled(btn); //disable stop button since game hasn't started yet
 }
 
 //this function will roll for random number twice, once for 
