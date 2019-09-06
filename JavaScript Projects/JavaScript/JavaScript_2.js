@@ -1,3 +1,4 @@
+//pg217
 function validateForm() {
     var x = document.forms["myForm"]["fname", "lname"].value;
     if (x== "") {
