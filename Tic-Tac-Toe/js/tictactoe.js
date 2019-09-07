@@ -562,7 +562,7 @@ function checkWinCon8(info, squareArray) {
             var match8Avatar = info[i].charAt(1);
         }
     }
-    if (match0Avatar != undefined && match4Avatar != undefined && match68vatar != undefined) {
+    if (match0Avatar != undefined && match4Avatar != undefined && match8Avatar != undefined) {
         if (match0Avatar == match4Avatar && match0Avatar == match8Avatar) {
             winDetected = "win"; //this flag will pass when a win has been detected
         }
@@ -765,7 +765,7 @@ function square9Animate() {
        var verdict = recordMoves(square);
        if (verdict == undefined) { // if verdict is empty, then the square is unoccupied
            var paintAvatar = determineAvatar(); //get the correct avatar to paint for the active player
-           var selected = document.getElementsByClassName(paintAvatar)[9]; //paint avatar
+           var selected = document.getElementsByClassName(paintAvatar)[8]; //paint avatar
            if (paintAvatar == "O") { //change all these to ternary statements instead
                animateO(selected); //call function to animate O
            } else if (paintAvatar == "X") {
@@ -788,5 +788,5 @@ function animateO(selected) {
 
 //this function will perform the animation for the X avatar
 function animateX(selected) {
-    selected.style.transform = (selected.style.transform == "translateY(-100%)" || null) ? "translateY(0%)" : "translateY(-100%)";
+    selected.style.transform = (selected.style.transform == "translateY(100%)" || null) ? "translateY(0%)" : "translateY(100%)";
 }

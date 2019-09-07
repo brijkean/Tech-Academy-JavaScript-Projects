@@ -86,7 +86,6 @@ table tr:nth-child(3) td:nth-child(1) {
 .X {
     transition: transform .3s;
     opacity: 1;
-    position: absolute;
     background-image: url("../images/avatarX.gif");
     width: 200px;
     height: 200px;
