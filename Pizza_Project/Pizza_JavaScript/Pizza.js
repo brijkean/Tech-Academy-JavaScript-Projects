@@ -27,9 +27,9 @@ function getReceipt() {
     console.log("size text1: "+text1);
     console.log("subtotal: $"+runningTotal+".00");
     // these variables will be passed on to each function
-    getMeat(runningTotal, text1);
+    getTopping(runningTotal, text1);
 };
-
+/*
 function getMeat(runningTotal, text1) {
     var meatTotal = 0;
     var selectedMeat = [];
@@ -53,5 +53,34 @@ function getMeat(runningTotal, text1) {
     console.log("meat text1: "+text1);
     console.log("Purchase Total: "+"$"+runningTotal+".00");
     document.getElementById("showText").innerHTML=text1;
-    document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>"
-}
+    document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>" 
+    console.log("subtotal: $"+runningTotal+".00");
+};
+ */
+
+function getTopping(runningTotal, text1) {
+    var toppingTotal = 0;
+    var selectedTopping = [];
+    var toppingArray = document.getElementsByClassName("topping");
+    for (var j=0; j < toppingArray.length; j++) {
+        if (toppingArray[j].checked) {
+            selectedTopping.push(toppingArray[j].value);
+            console.log("selected topping item: ("+toppingArray[j].value+")");
+            text1 = text1+toppingArray[j].value+"<br>";
+        }
+    }
+    var toppingCount = selectedTopping.length;
+    if (toppingCount > 1) {
+        toppingTotal = (toppingCount - 1);
+    } else {
+        toppingTotal = 0;
+    }
+    runningTotal = (runningTotal + toppingTotal);
+    console.log("total selected meat items: "+toppingCount);
+    console.log(toppingCount+" topping -1 free topping = "+"$"+toppingTotal+".00");
+    console.log("topping text1: "+text1);
+    console.log("Purchase Total: "+"$"+runningTotal+".00");
+    document.getElementById("showText").innerHTML=text1;
+    document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>" 
+    console.log("subtotal: $"+runningTotal+".00");
+};
