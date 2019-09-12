@@ -10,24 +10,49 @@
 			<h2>Get The Latest Content:</h2>
 			<div class='content' id="content">
 				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
-			</div>
-		<script type="text/javascript">
-            
+            </div>
+
+            <div class='content' id="extra_content" style="margin-top: 100px; display: none;">
+                <input type="button" class="button" value="Get extra content" id="new_btn" onclick="extraContent();"/>
+            </div>
+        
+        <script type="text/javascript">
+            var x = document.getElementsByClassName('content');
            // step 1: setup the xml http request object
            var ajax = new XMLHttpRequest();
+
            // step 2: prepare the open ajax request
            ajax.open('GET', 'content.html');
+
            // step 3: define the ajax response callback method
            ajax.onreadystatechange = function() {
                if (ajax.readyState = 4) {
-                   document.getElementById('content').innerHTML = ajax.responseText;
+                   //document.getElementById('content').innerHTML = ajax.responseText;
+                   x[0].innerHTML = ajax.responseText;
                }
            }
+
            // step 4: send the ajax request for data
            function getContent() {
                ajax.send();
                document.getElementById('btn_content').style.display = 'none';
+
+               //pg286
+               setTimeout(showBtn, 800);
            }
+
+           //pg286 challenge
+           function showBtn() {
+               document.getElementById('extra_content').style.display = "block";
+           }
+
+           function extraContent() {
+               ajax.open('GET', 'music.html');
+               ajax.send();
+               document.getElementById('extra_content').style.display = 'none';
+           }
+
+
 
 		</script>
     </body>
