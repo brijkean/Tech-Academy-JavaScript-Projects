@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>pg299</title>
+
+        <style>
+        .serif {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .sans {
+            font-family: 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(100, 198, 255);
+        }
+        </style>
+    </head>
+    
+    
+
+<body>
+        <div id='container'>
+            <div id='inner'>
+                <h1><span style="cursor: pointer; color:rgb(100, 198, 255);">Basic jQuery</span></h1>
+                <p id='1'>Paragraph 1</p>
+                <p id='2'>Paragraph 2</p>
+                <p class="hidden" id='3' style="display:none;">Paragraph 3<br>
+                    This paragraph is longer than the others.</p>
+                <p id='4' class='sans serif'>Paragraph 4</p>    
+            </div>
+        </div>
+    </body>
+<script>
+    $(document).ready(function(){
+
+        
+
+        
+    });
+    // Binding multiple events with different handlers
+    $( document ).on({
+        "mousemove": function( event ) { console.log( "(X, Y) = " + event.pageX +", " + event.pageY ); },
+        "click": function() { console.log( "clicked at " + event.pageX + ", " + event.pageY ); }
+    });
+    //toggle p classes
+    $( "p.serif" ).click(function() {
+            $( this ).toggleClass("sans");
+        });
+    
+    $("h1").click(function() {
+        $('p.hidden').show( 1000 );
+    });    
+
+    
+        
+
+    </script>       
+
+</html>
